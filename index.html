@@ -237,17 +237,10 @@ var _hmt = _hmt || [];
   $("#btn-logout").addEventListener("click", doLogout);
   $("#auth-password").addEventListener("keydown", e => { if (e.key === "Enter") doLogin(); });
 
-  // 页面加载: 检查 token
+  // 页面加载: 免登录直接进入
   async function checkAuth() {
-    if (!authToken) { showAuth(); return; }
-    try {
-      const data = await api("/api/auth/me");
-      enterApp(data.username);
-    } catch (e) {
-      authToken = "";
-      localStorage.removeItem("idi_token");
-      showAuth();
-    }
+    enterApp("");
+    loadData();
   }
 
   // 图片放大
