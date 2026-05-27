@@ -32,6 +32,30 @@ var _hmt = _hmt || [];
 </head>
 <body class="bg-slate-50 text-slate-800 min-h-screen">
 
+<!-- ===== 登录/注册界面 ===== -->
+<div id="auth-screen" class="fixed inset-0 z-50 bg-[#1F4E78] flex items-center justify-center px-4 hidden">
+  <div class="bg-white rounded-2xl shadow-xl w-full max-w-sm p-6">
+    <h2 class="text-xl font-bold text-center text-[#1F4E78] mb-1">IDI 缺陷速查</h2>
+    <p class="text-xs text-slate-400 text-center mb-6">请登录后使用</p>
+
+    <div id="auth-form">
+      <input id="auth-username" type="text" placeholder="用户名" autocomplete="username"
+             class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-base mb-3 outline-none focus:border-[#1F4E78]" />
+      <input id="auth-password" type="password" placeholder="密码" autocomplete="current-password"
+             class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-base mb-3 outline-none focus:border-[#1F4E78]" />
+      <input id="auth-code" type="text" placeholder="注册密令"
+             class="w-full rounded-lg border border-slate-200 px-3 py-2.5 text-base mb-3 outline-none focus:border-[#1F4E78]" />
+      <label class="flex items-center gap-2 mb-4 text-sm text-slate-600 cursor-pointer">
+        <input id="auth-remember" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-[#1F4E78]" />
+        <span>记住我（一年内免登录）</span>
+      </label>
+      <div id="auth-error" class="hidden text-xs text-rose-600 mb-3 text-center"></div>
+      <button id="btn-login" class="w-full rounded-lg bg-[#1F4E78] text-white py-2.5 text-base font-medium active:opacity-80">登录</button>
+      <button id="btn-register" class="w-full rounded-lg bg-white text-[#1F4E78] border border-[#1F4E78] py-2.5 text-base font-medium mt-2 active:bg-slate-50">注册新账号</button>
+    </div>
+  </div>
+</div>
+
 <!-- ===== 主应用界面 ===== -->
 <div id="app-screen" class="hidden">
 
